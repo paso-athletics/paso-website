@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Rubik } from "next/font/google";
+import { NAV_ABOUT, NAV_TEAM, NAV_JOIN } from "../../constants";
 
 const rubik = Rubik({
     weight: '300'
@@ -8,7 +9,7 @@ const rubik = Rubik({
 
 export default function Navbar() {
     return (
-        <nav className="bg-[#0e0e0e]">
+        <nav className="absolute bg-[#0e0e0e] w-full z-10">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <div>
                     <a href="/">
@@ -23,13 +24,13 @@ export default function Navbar() {
                 <div id="navigation" className={`${rubik.className} hidden text-white text-xs uppercase w-full md:block md:w-auto`}>
                     <ul className="flex flex-col mt-4 p-4 md:flex-row md:space-x-8">
                         <li>
-                            <Link className='block py-2 px-3 hover:bg-paso-light-orange md:hover:bg-transparent md:inline md:py-0 md:px-0' href="/about">about</Link>
+                            <Link className='block py-2 px-3 hover:bg-paso-light-orange md:hover:bg-transparent md:inline md:py-0 md:px-0' href="/about">{`${NAV_ABOUT}`}</Link>
                         </li>
                         <li>
-                            <Link className='block py-2 px-3 hover:bg-paso-light-orange md:hover:bg-transparent md:inline md:py-0 md:px-0' href="/team">team</Link>
+                            <Link className='block py-2 px-3 hover:bg-paso-light-orange md:hover:bg-transparent md:inline md:py-0 md:px-0' href="/team">{`${NAV_TEAM}`}</Link>
                         </li>
                         <li>
-                            <Link className='pill-btn block py-2 px-3 hover:bg-paso-light-orange md:bg-paso-light-orange md:inline md:py-0 md:px-0 md:shadow-md md:hover:shadow-orange-500/50' href="/join">join us</Link>
+                            <Link className='pill-btn block py-2 px-3 hover:bg-paso-light-orange md:bg-paso-light-orange md:inline md:py-0 md:px-0 md:shadow-md md:hover:shadow-orange-500/50' href="/join">{`${NAV_JOIN}`}</Link>
                         </li>
                     </ul>
                 </div>
