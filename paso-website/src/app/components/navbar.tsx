@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Rubik } from "next/font/google";
-import { NAV_ABOUT, NAV_TEAM, NAV_JOIN } from "../../constants";
+import { NAV_ABOUT, NAV_TEAM, NAV_EVENTS, NAV_JOIN } from "../../constants";
 
 const rubik = Rubik({
     weight: '300'
@@ -10,10 +10,10 @@ const rubik = Rubik({
 export default function Navbar() {
     return (
         <nav className="absolute bg-[#0e0e0e] w-full z-10">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <div>
+            <div className="relative max-w-screen-xl flex flex-wrap items-center justify-end mx-auto p-4">
+                <div className="absolute -left-8 -top-25 -z-1 md:top-auto md:z-auto" >
                     <a href="/">
-                        <Image className="h-10" src="/assets/logo.png" width={100} height={0} alt="PRC Logo"/>
+                        <Image src="/assets/logo.png" width={220} height={0} alt="PRC Logo"/>
                     </a>
                 </div>
                 <button data-collapse-toggle="navigation" type="button" className="p-2 w-10 h-10 hover:cursor-pointer md:hidden" aria-controls="navigation" aria-expanded="false">
@@ -25,6 +25,9 @@ export default function Navbar() {
                     <ul className="flex flex-col mt-4 p-4 md:flex-row md:space-x-8">
                         <li>
                             <Link className='block py-2 px-3 hover:bg-paso-light-orange md:hover:bg-transparent md:inline md:py-0 md:px-0' href="/about">{`${NAV_ABOUT}`}</Link>
+                        </li>
+                        <li>
+                            <Link className='block py-2 px-3 hover:bg-paso-light-orange md:hover:bg-transparent md:inline md:py-0 md:px-0' href="/events">{`${NAV_EVENTS}`}</Link>
                         </li>
                         <li>
                             <Link className='block py-2 px-3 hover:bg-paso-light-orange md:hover:bg-transparent md:inline md:py-0 md:px-0' href="/team">{`${NAV_TEAM}`}</Link>
