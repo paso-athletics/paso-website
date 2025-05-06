@@ -1,8 +1,9 @@
 import { EB_Garamond } from "next/font/google";
-import { HOME_MAIN_TITLE, HOME_SUB_TITLE } from "../../constants";
+import { HOME_MAIN_TITLE, HOME_SUB_TITLE } from "../constants";
 
 const garamond = EB_Garamond({
-    weight: '400'
+    weight: '400',
+    subsets: ['latin']
 });
 
 export default function Home() {

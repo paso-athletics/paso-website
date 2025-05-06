@@ -6,3 +6,4 @@ export const NAV_TEAM = 'team';
 export const NAV_EVENTS = 'events';
 export const NAV_JOIN = 'join us';
 
+export const FOOTER_COPYRIGHT = '2025 Paso Run Club';

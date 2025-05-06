@@ -1,8 +1,15 @@
 import Image from 'next/image'
+import { Rubik } from "next/font/google";
+import { FOOTER_COPYRIGHT } from "../../constants";
+
+const rubik = Rubik({
+    weight: '300',
+    subsets: ['latin']
+});
 
 export default function Footer() {
     return (
-        <footer className='my-8'>
+        <footer className={`${rubik.className} my-8`}>
             <div className='flex justify-center'>
                 <a className='mx-2' href='https://www.instagram.com/pasorunclub/' target='_blank'>
                     <svg className='h-4 w-4 hover:scale-[1.2]' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22.76 22.76">
@@ -18,7 +25,7 @@ export default function Footer() {
                     <Image className='h-4 w-4 hover:scale-[1.2]' src="/assets/strava-icon.png" width={25} height={0} alt="strava"/>
                 </a>
             </div>
-            <p className='text-white text-center text-[9px] mt-4'>&copy;2025 Paso Run Club </p>
+            <p className='text-white text-center text-[9px] mt-4'>&copy;{`${FOOTER_COPYRIGHT}`}</p>
         </footer>
     );
 }
