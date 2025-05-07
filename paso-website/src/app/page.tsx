@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <section className="relative">
         <div className="absolute top-0 bg-black opacity-50 w-full h-screen"></div>
-        <img className='w-full h-screen object-cover object-[40%] md:object-center' src="/assets/landing.jpg" alt="Paso Run Club Group Photo"/>
+        <img className='w-full h-screen object-cover object-[42%] md:object-center' src="/assets/landing.jpg" alt="Paso Run Club Group Photo"/>
         <div className={`absolute text-white text-center m-auto left-0 right-0 bottom-10 ${garamond.className}`}>
           <h1 className="uppercase text-2xl">{`${HOME_MAIN_TITLE}`}</h1>
           <h2 className="uppercase">{`${HOME_SUB_TITLE}`}</h2>
