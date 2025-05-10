@@ -12,14 +12,23 @@ const rubik = Rubik({
     subsets: ['latin']
 });
 
-export default function Navbar() {
-    const [showClose, setShowClose] = useState(false);
+const overflowHidden = 'overflow-hidden';
 
-    const buttonHandler = () => {
-        setShowClose(showClose => !showClose);
+export default function Navbar() {
+    const [showMenuBar, setShowMenuBar] = useState(false);
+
+    const toggleMenuBar = () => {
+        setShowMenuBar(showMenuBar => !showMenuBar);
     }
 
-    useEffect( () => {}, [showClose]);
+    useEffect(() => {
+        if (showMenuBar) {
+            document.body.classList.add(overflowHidden);
+        }
+        else {
+            document.body.classList.remove(overflowHidden);
+        }
+    }, [showMenuBar]);
 
     return (
         <nav className="fixed bg-[#0e0e0e] w-full z-10">
@@ -29,33 +38,33 @@ export default function Navbar() {
                         <Image src="/assets/logo.png" width={220} height={0} alt="PRC Logo"/>
                     </Link>
                 </div>
-                <button data-collapse-toggle="navigation" type="button" className="p-2 w-10 h-10 hover:cursor-pointer md:hidden" aria-controls="navigation" aria-expanded="false" onClick={buttonHandler}>
+                <button type="button" className="p-2 w-10 h-10 hover:cursor-pointer md:hidden"  onClick={toggleMenuBar}>
                     {
-                        (!showClose) && 
+                        (!showMenuBar) && 
                         <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
                             <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
                         </svg>
                     }
                     {
-                        (showClose) && 
+                        (showMenuBar) && 
                         <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                             <path stroke="white" strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
                         </svg> 
                     }
                 </button>
-                <div id="navigation" className={`${rubik.className} mt-2 hidden text-white text-xs uppercase border-t-[0.5] w-full h-screen md:block md:mt-0 md:w-auto md:h-auto md:border-t-[0]`}>
+                <div className={`${rubik.className} mt-4 ${showMenuBar ? '' : 'hidden'} text-white text-xs uppercase border-t-[0.5] w-full h-screen md:block md:mt-0 md:w-auto md:h-auto md:border-t-[0]`}>
                     <ul className="flex flex-col text-center py-10 md:flex-row md:p-4 md:space-x-8">
                         <li>
-                            <Link className='block py-10 hover:bg-paso-light-orange md:hover:bg-transparent md:inline' href="/about">{`${NAV_ABOUT}`}</Link>
+                            <Link className='block py-10 hover:bg-paso-light-orange md:hover:bg-transparent md:inline' href="/about" onClick={toggleMenuBar}>{`${NAV_ABOUT}`}</Link>
                         </li>
                         <li>
-                            <Link className='block py-10 hover:bg-paso-light-orange md:hover:bg-transparent md:inline' href="/team">{`${NAV_TEAM}`}</Link>
+                            <Link className='block py-10 hover:bg-paso-light-orange md:hover:bg-transparent md:inline' href="/team" onClick={toggleMenuBar}>{`${NAV_TEAM}`}</Link>
                         </li>
                         <li>
-                            <Link className='block py-10 hover:bg-paso-light-orange md:hover:bg-transparent md:inline' href="/events">{`${NAV_EVENTS}`}</Link>
+                            <Link className='block py-10 hover:bg-paso-light-orange md:hover:bg-transparent md:inline' href="/events" onClick={toggleMenuBar}>{`${NAV_EVENTS}`}</Link>
                         </li>
                         <li>
-                            <Link className='pill-btn py-10 block hover:bg-paso-light-orange md:bg-paso-light-orange md:inline md:shadow-md md:hover:shadow-orange-500/50' href="/contact">{`${NAV_CONTACT}`}</Link>
+                            <Link className='pill-btn py-10 block hover:bg-paso-light-orange md:bg-paso-light-orange md:inline md:shadow-md md:hover:shadow-orange-500/50' href="/contact" onClick={toggleMenuBar}>{`${NAV_CONTACT}`}</Link>
                         </li>
                     </ul>
                     <div className='mt-5 md:hidden'>
