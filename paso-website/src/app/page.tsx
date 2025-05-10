@@ -18,7 +18,7 @@ export default function Home() {
         </div>
       </section>
       <section>
-        {/* <h1 className="text-white">more content to come...</h1> */}
+        <h1 className="text-white text-center pt-4">*weekly runs in nyc*</h1>
       </section>
     </>
   );

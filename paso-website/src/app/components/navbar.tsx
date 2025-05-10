@@ -2,9 +2,10 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import Socials from './socials';
 import { useState, useEffect } from 'react';
 import { Rubik } from "next/font/google";
-import { NAV_ABOUT, NAV_TEAM, NAV_EVENTS, NAV_JOIN } from "../../constants";
+import { NAV_ABOUT, NAV_TEAM, NAV_EVENTS, NAV_CONTACT } from "../../constants";
 
 const rubik = Rubik({
     weight: '300',
@@ -21,7 +22,7 @@ export default function Navbar() {
     useEffect( () => {}, [showClose]);
 
     return (
-        <nav className="absolute bg-[#0e0e0e] w-full z-10">
+        <nav className="fixed bg-[#0e0e0e] w-full z-10">
             <div className="relative max-w-screen-xl flex flex-wrap items-center justify-end mx-auto p-4">
                 <div className="absolute -left-8 -top-25 h-[160px] overflow-hidden md:overflow-auto md:h-auto md:top-auto">
                     <Link href="/">
@@ -42,21 +43,24 @@ export default function Navbar() {
                         </svg> 
                     }
                 </button>
-                <div id="navigation" className={`${rubik.className} hidden text-white text-xs uppercase w-full md:block md:w-auto`}>
-                    <ul className="flex flex-col mt-4 p-4 md:flex-row md:space-x-8">
+                <div id="navigation" className={`${rubik.className} mt-2 hidden text-white text-xs uppercase border-t-[0.5] w-full h-screen md:block md:mt-0 md:w-auto md:h-auto md:border-t-[0]`}>
+                    <ul className="flex flex-col text-center py-10 md:flex-row md:p-4 md:space-x-8">
                         <li>
-                            <Link className='block py-2 px-3 hover:bg-paso-light-orange md:hover:bg-transparent md:inline md:py-0 md:px-0' href="/about">{`${NAV_ABOUT}`}</Link>
+                            <Link className='block py-10 hover:bg-paso-light-orange md:hover:bg-transparent md:inline' href="/about">{`${NAV_ABOUT}`}</Link>
                         </li>
                         <li>
-                            <Link className='block py-2 px-3 hover:bg-paso-light-orange md:hover:bg-transparent md:inline md:py-0 md:px-0' href="/events">{`${NAV_EVENTS}`}</Link>
+                            <Link className='block py-10 hover:bg-paso-light-orange md:hover:bg-transparent md:inline' href="/team">{`${NAV_TEAM}`}</Link>
                         </li>
                         <li>
-                            <Link className='block py-2 px-3 hover:bg-paso-light-orange md:hover:bg-transparent md:inline md:py-0 md:px-0' href="/team">{`${NAV_TEAM}`}</Link>
+                            <Link className='block py-10 hover:bg-paso-light-orange md:hover:bg-transparent md:inline' href="/events">{`${NAV_EVENTS}`}</Link>
                         </li>
                         <li>
-                            <Link className='pill-btn block py-2 px-3 hover:bg-paso-light-orange md:bg-paso-light-orange md:inline md:py-0 md:px-0 md:shadow-md md:hover:shadow-orange-500/50' href="/join">{`${NAV_JOIN}`}</Link>
+                            <Link className='pill-btn py-10 block hover:bg-paso-light-orange md:bg-paso-light-orange md:inline md:shadow-md md:hover:shadow-orange-500/50' href="/contact">{`${NAV_CONTACT}`}</Link>
                         </li>
                     </ul>
+                    <div className='mt-5 md:hidden'>
+                        <Socials/>
+                    </div>
                 </div>
             </div>
         </nav>
