@@ -18,7 +18,7 @@ export default function Navbar() {
     const [showMenuBar, setShowMenuBar] = useState(false);
 
     const toggleMenuBar = () => {      
-        let timeout = !showMenuBar ? 0 : 300;
+        const timeout = !showMenuBar ? 0 : 300;
 
         setTimeout(() => {
             setShowMenuBar(showMenuBar => !showMenuBar);

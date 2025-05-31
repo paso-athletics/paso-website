@@ -12,6 +12,8 @@ const rubik = Rubik({
     subsets: ['latin']
 });
 
+const marqueeItems = 8;
+
 export default function Home() {
   return (
     <>
@@ -30,7 +32,7 @@ export default function Home() {
         </div>
         <div className= "bg-paso-light-orange flex text-center text-transparent py-2 whitespace-nowrap overflow-hidden">
           {
-            Array.from(Array(8)).map(() => <h1 className="marquee text-2xl tracking-wider mx-2">{`${SLOGAN}`}</h1>)
+            Array.from(Array(marqueeItems)).map(() => <span key={Math.random() * marqueeItems}><h1 className="marquee text-2xl tracking-wider mx-2">{`${SLOGAN}`}</h1></span>)
           }  
         </div>
       </section>
