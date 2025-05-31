@@ -17,8 +17,12 @@ const overflowHidden = 'overflow-hidden';
 export default function Navbar() {
     const [showMenuBar, setShowMenuBar] = useState(false);
 
-    const toggleMenuBar = () => {
-        setShowMenuBar(showMenuBar => !showMenuBar);
+    const toggleMenuBar = () => {      
+        let timeout = !showMenuBar ? 0 : 300;
+
+        setTimeout(() => {
+            setShowMenuBar(showMenuBar => !showMenuBar);
+        }, timeout);
     }
 
     useEffect(() => {
@@ -31,14 +35,14 @@ export default function Navbar() {
     }, [showMenuBar]);
 
     return (
-        <nav className="fixed bg-[#0e0e0e] w-full z-10">
+        <nav className="fixed bg-paso-light-black w-full z-10">
             <div className="relative max-w-screen-xl flex flex-wrap items-center justify-end mx-auto p-4">
                 <div className="absolute -left-8 -top-25 h-[160px] overflow-hidden md:overflow-auto md:h-auto md:top-auto">
-                    <Link href="/">
+                    <Link href="/" onClick={() => {if (showMenuBar) toggleMenuBar()}}>
                         <Image src="/assets/logo.png" width={220} height={0} alt="PRC Logo"/>
                     </Link>
                 </div>
-                <button type="button" className="p-2 w-10 h-10 hover:cursor-pointer md:hidden"  onClick={toggleMenuBar}>
+                <button type="button" className="p-2 w-10 h-10 hover:cursor-pointer md:hidden" onClick={toggleMenuBar}>
                     {
                         (!showMenuBar) && 
                         <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
@@ -52,7 +56,7 @@ export default function Navbar() {
                         </svg> 
                     }
                 </button>
-                <div className={`${rubik.className} mt-4 ${showMenuBar ? '' : 'hidden'} text-white text-xs uppercase border-t-[0.5] w-full h-screen md:block md:mt-0 md:w-auto md:h-auto md:border-t-[0]`}>
+                <div className={`${rubik.className} mt-4 ${showMenuBar ? '' : 'hidden'} text-xs uppercase border-t-[0.5] w-full h-screen md:block md:mt-0 md:w-auto md:h-auto md:border-t-[0]`}>
                     <ul className="flex flex-col text-center py-10 md:flex-row md:p-4 md:space-x-8">
                         <li>
                             <Link className='block py-10 hover:bg-paso-light-orange md:hover:bg-transparent md:inline' href="/about" onClick={toggleMenuBar}>{`${NAV_ABOUT}`}</Link>

@@ -2,12 +2,30 @@
 
 @theme {
     --color-paso-light-orange: #ee692f;
+    --color-paso-light-black: #0e0e0e;
 }
 
+.marquee {
+    -webkit-text-stroke-width: 1.2px;
+    -webkit-text-stroke-color: white;
+    animation: scroll 10s linear infinite;
+}
+
+.vertical-align {
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+}
+
+@keyframes scroll {
+    to {
+        transform: translateX(-100%);
+    }
+}
+ 
 @media (min-width: 768px) { 
     .pill-btn {
         border-radius: 100px;
         padding: 10px 20px;
     }
 }
-

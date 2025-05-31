@@ -11,7 +11,7 @@ export default function Footer() {
     return (
         <footer className={`${rubik.className} my-8`}>
             <Socials/>
-            <p className='text-white text-center text-[9px] mt-4'>&copy;{`${FOOTER_COPYRIGHT}`}</p>
+            <p className='text-center text-[9px] mt-4'>&copy;{`${FOOTER_COPYRIGHT}`}</p>
         </footer>
     );
 }
