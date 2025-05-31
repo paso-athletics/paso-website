@@ -20,7 +20,7 @@ export default function Runtype(run : RunTypeInput) {
         <div className="relative h-[500px] overflow-hidden">
             {
                 videoBackground && 
-                <video className="relative w-full bottom-[350px] md:bottom-[500px]" autoPlay loop muted playsInline>
+                <video className="relative w-full bottom-[150px] md:bottom-[500px]" autoPlay loop muted playsInline>
                     <source type="video/mp4" src={runTopic.bgContent}></source>
                 </video>    
             }

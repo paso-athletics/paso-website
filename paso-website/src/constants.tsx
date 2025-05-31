@@ -24,7 +24,7 @@ export const TYPES_OF_RUNS = [
         id: 'commRun',
         title: 'paso thursdays',
         desc: 'Whether you\'re just getting started or have miles under your belt, this run is for you. Every Thursday, we come together for a relaxed 3-mile run focused on connection, support, and shared momentum. No pressure—just good vibes, good people, and the joy of running together.',
-        location: 'Columbus Circle (Check @pasorunclub on IG for latest)',
+        location: 'Columbus Circle (Check IG @pasorunclub)',
         time: 'Meetup: 6:00PM | Run: 7:00PM',
         bgType: '',
         bgContent: ''
