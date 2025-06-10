@@ -20,11 +20,11 @@ export default function Runtype(run : RunTypeInput) {
         <div className="relative h-[500px] overflow-hidden">
             {
                 videoBackground && 
-                <video className="relative w-full bottom-[150px] md:bottom-[500px]" autoPlay loop muted playsInline>
+                <video className="relative w-full bottom-[150px] md:bottom-[800px]" autoPlay loop muted playsInline>
                     <source type="video/mp4" src={runTopic.bgContent}></source>
                 </video>    
             }
-            <div className="absolute bg-black opacity-50 w-full h-full top-[0px]"></div>
+            <div className="absolute bg-black opacity-75 w-full h-full top-[0px]"></div>
             <div className="absolute w-full p-4 vertical-align">
                 <div>
                     <h2 className="text-2xl uppercase tracking-[5px]">{`${runTopic.title}`}</h2>

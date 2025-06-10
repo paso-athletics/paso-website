@@ -10,6 +10,13 @@ export const BRIEF_INTRO_P2 = 'Bring your pace, your story.';
 export const SLOGAN = 'PON TUS MILLAS'
 export const JOIN_US_HEADING = 'come run with us';
 
+export const SOCIAL_LINKS = {
+    instagram : 'https://www.instagram.com/pasorunclub/',
+    tiktok: 'https://www.tiktok.com/@pasorunclub',
+    strava: 'https://strava.app.link/qu26Nbzv8Sb',
+    whatsapp: 'https://chat.whatsapp.com/EMthGfiMbb8KzK3JSyjOhk'
+};
+
 export const TYPES_OF_RUNS = [
     {
         id: 'track',
@@ -18,16 +25,16 @@ export const TYPES_OF_RUNS = [
         location: 'McCarren Park',
         time: 'Meetup: 6:30PM | Track: 7:00PM',
         bgType: 'video',
-        bgContent: '../assets/track.mp4'
+        bgContent: '../assets/videos/track.mp4'
     },
     {
         id: 'commRun',
         title: 'paso thursdays',
         desc: 'Whether you\'re just getting started or have miles under your belt, this run is for you. Every Thursday, we come together for a relaxed 3-mile run focused on connection, support, and shared momentum. No pressure—just good vibes, good people, and the joy of running together.',
-        location: 'Columbus Circle (Check IG @pasorunclub)',
+        location: 'Check our Instagram',
         time: 'Meetup: 6:00PM | Run: 7:00PM',
-        bgType: '',
-        bgContent: ''
+        bgType: 'video',
+        bgContent: '../assets/videos/paso-thu.mp4'
     }
 ];
 
