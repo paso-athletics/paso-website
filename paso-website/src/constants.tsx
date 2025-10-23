@@ -9,6 +9,9 @@ export const BRIEF_INTRO_P1 = 'Somos PASO — inspired by a community that keeps
 export const BRIEF_INTRO_P2 = 'Bring your pace, your story.';
 export const SLOGAN = 'PON TUS MILLAS'
 export const JOIN_US_HEADING = 'come run with us';
+export const CONTACT_HEADING = 'contact us';
+export const CONTACT_SUB_HEADING = 'Have a question? Want to connect?';
+export const CONTACT_ADDITIONAL = 'Whether you\'re a new runner curious about joining, a brand interested in collaborating, or just want to say hey—we\’d love to hear from you. Reach out and let\’s get the conversation started.';
 
 export const SOCIAL_LINKS = {
     instagram : 'https://www.instagram.com/pasorunclub/',
